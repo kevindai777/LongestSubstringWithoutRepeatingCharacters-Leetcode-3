@@ -44,8 +44,10 @@ while (p1 < string.length && p2 < string.length) {
     if (!hashSet.has(string.charAt(p2))) {
         hashSet.add(string.charAt(p2++))
         ans2 = Math.max(ans2, p2 - p1)
+    //We delete the element if it already exists to make sure it doesn't repeat
+    //if we pass by it again
     } else {
-        hashSet.add(string.charAt(p1++))
+        hashSet.delete(string.charAt(p1++))
     }
 }
 
