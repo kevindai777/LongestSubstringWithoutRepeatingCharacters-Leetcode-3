@@ -41,6 +41,8 @@ let hashSet = new Set()
 //Here we have p2 as the pointer who moves the window forward if it is unique
 //and p1 as the pointer if it is not unique.
 while (p1 < string.length && p2 < string.length) {
+    //If the hashset doesn't have it, move the second pointer up and add it to the set
+    //Then, update the answer since we have a new unique substring
     if (!hashSet.has(string.charAt(p2))) {
         hashSet.add(string.charAt(p2++))
         ans2 = Math.max(ans2, p2 - p1)
